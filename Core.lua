@@ -12,9 +12,9 @@ local options = {
 	size = 16,
 	margin = 2,
 	opacity = 90,
-	color_start = Color("FFA500"),
-	color_end = Color("FF0000"),
-	color_friendly = Color("00FF00")
+	color_start = Color("FFA500"):with_alpha(1),
+	color_end = Color("FF0000"):with_alpha(1),
+	color_friendly = Color("00FF00"):with_alpha(1)
 }
 
 -- FloatingHealthBarManager
@@ -357,9 +357,6 @@ function FloatingHealthBar:draw(t)
 		d = math.min(d, options.opacity / 100)
 		if not (unit and unit:contour() and #(unit:contour()._contour_list or {}) > 0) then
 			d = math.min(d, self.owner:_visibility(pos))
-		end
-		if out then
-			d = math.min(d, 0.5)
 		end
 		if not self.dying then
 			self.pnl:set_alpha(d)

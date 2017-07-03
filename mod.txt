@@ -2,10 +2,10 @@
 	"name" : "Floating Health Bars",
 	"description" : "Floating Health Bars from PocoHud",
 	"author" : "Zenyr, BangL",
-	"version" : "0.1",
+	"version" : "0.2",
 	"updates" : [
 		{
-			"revision" : 1,
+			"revision" : 2,
 			"identifier" : "fhb"
 		}
 	],
