@@ -3,6 +3,12 @@
 	"description" : "Floating Health Bars from PocoHud",
 	"author" : "Zenyr, BangL",
 	"version" : "0.1",
+	"updates" : [
+		{
+			"revision" : 1,
+			"identifier" : "fhb"
+		}
+	],
 	"persist_scripts" : [
 		{"global" : "FloatingHealthBars_initialized", "script_path" : "Core.lua"}
 	]
