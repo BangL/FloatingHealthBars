@@ -1,0 +1,9 @@
+{
+	"name" : "Floating Health Bars",
+	"description" : "Floating Health Bars from PocoHud",
+	"author" : "Zenyr, BangL",
+	"version" : "0.1",
+	"persist_scripts" : [
+		{"global" : "FloatingHealthBars_initialized", "script_path" : "Core.lua"}
+	]
+}
