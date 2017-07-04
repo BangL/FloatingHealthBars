@@ -60,9 +60,20 @@ function FloatingHealthBarManager:Float(unit)
 	end
 end
 
+function FloatingHealthBarManager:_tryGetState()
+	local unit = managers.player:player_unit()
+	if unit then
+		local movement = unit:movement()
+		if movement then
+			return movement:current_state()
+		end
+	end
+	return nil
+end
+
 function FloatingHealthBarManager:_updateItems(t, dt)
-	self.state = self.state or managers.player:player_unit():movement():current_state()
-	self.ADS= self.state and self.state._state_data.in_steelsight
+	self.state = self.state or self:_tryGetState()
+	self.ADS = self.state and self.state._state_data.in_steelsight
 	self:_scanSmoke(t)
 
 	local r = nil
