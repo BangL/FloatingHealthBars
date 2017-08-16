@@ -212,7 +212,6 @@ function FloatingHealthBar:init(owner, data)
 	self.unit = data.unit
 	self.key = data.key
 	self.ppnl = owner.pnl
-	self.tag = {}
 	self.lastT = now()
 	self:_make()
 end
@@ -335,8 +334,9 @@ function FloatingHealthBar:draw(t)
 		local cHealth = unit:character_damage() and unit:character_damage()._health and unit:character_damage()._health * 10 or 0
 		local fHealth = cHealth > 0 and unit:character_damage() and (unit:character_damage()._HEALTH_INIT and unit:character_damage()._HEALTH_INIT * 10 or unit:character_damage()._health_max and unit:character_damage()._health_max * 10) or 1
 		prog = cHealth / fHealth
-		local isEnemy = unit and managers.enemy:is_enemy(unit)
-		local color = isEnemy and math.lerp(options.color_end, options.color_start, prog) or options.color_friendly
+		local isEnemy = managers.enemy:is_enemy(unit)
+		local isConverted = unit:brain() and unit:brain()._logic_data and unit:brain()._logic_data.is_converted
+		local color = (isEnemy and not isConverted) and math.lerp(options.color_end, options.color_start, prog) or options.color_friendly
 		if pDist <= 100000 and cHealth > 0 then
 			table.insert(txts, {round(cHealth, 2) .. '/' .. round(fHealth, 2), color})
 		end
