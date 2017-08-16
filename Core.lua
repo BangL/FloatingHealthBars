@@ -336,7 +336,8 @@ function FloatingHealthBar:draw(t)
 		prog = cHealth / fHealth
 		local isEnemy = managers.enemy:is_enemy(unit)
 		local isConverted = unit:brain() and unit:brain()._logic_data and unit:brain()._logic_data.is_converted
-		local color = (isEnemy and not isConverted) and math.lerp(options.color_end, options.color_start, prog) or options.color_friendly
+		local isTurret = unit:base() and unit:base().get_type and unit:base():get_type() == "swat_turret"
+		local color = ((isEnemy and not isConverted) or isTurret) and math.lerp(options.color_end, options.color_start, prog) or options.color_friendly
 		if pDist <= 100000 and cHealth > 0 then
 			table.insert(txts, {round(cHealth, 2) .. '/' .. round(fHealth, 2), color})
 		end
