@@ -5,8 +5,8 @@
 	"contact" : "id/bangl",
 	"version" : "0.5",
 	"priority" : 0,
-    "image" : "fhb.png",
-    "color" : "0.25 0.88 0.82",
+	"image" : "fhb.png",
+	"color" : "0.25 0.88 0.82",
 	"blt_version" : 2,
 	"updates" : [
 		{
