@@ -3,7 +3,7 @@
 	"description" : "Floating Health Bars from PocoHud",
 	"author" : "Zenyr, BangL",
 	"contact" : "id/bangl",
-	"version" : "0.5",
+	"version" : "0.5.1",
 	"priority" : 0,
 	"image" : "fhb.png",
 	"color" : "0.25 0.88 0.82",
