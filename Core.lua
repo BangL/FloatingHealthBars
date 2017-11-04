@@ -258,7 +258,7 @@ function FloatingHealthBar:_make()
 		blend_mode = 'normal',
 		layer = 4
 	})
-	self.pie._circle:set_texture_rect(64, 0, -64, 64) -- mirror
+	self.pie._circle:set_texture_rect(128, 0, -128, 128)
 	self.pieBg = pnl:bitmap({
 		name = 'pieBg',
 		texture = 'guis/textures/pd2/hud_progress_active',
